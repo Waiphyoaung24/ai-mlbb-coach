@@ -92,7 +92,8 @@ async def chat(request: ChatRequest):
         result = graph.process_message(
             user_message=request.message,
             conversation_history=conversation_history,
-            llm_provider=request.llm_provider
+            llm_provider=request.llm_provider,
+            language=getattr(request, 'language', None),
         )
 
         # Update session

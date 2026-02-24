@@ -35,6 +35,7 @@ class CoachingState(TypedDict):
     build_context: Optional[str]
     strategy_context: Optional[str]
     llm_provider: Optional[LLMProvider]
+    language: Optional[str]
     response: Optional[str]
 
 
@@ -146,6 +147,13 @@ Respond naturally to greetings and general conversation while staying in charact
 
         system_prompt = intent_prompts.get(state["intent"], intent_prompts["general_strategy"])
 
+        # Language instruction based on user preference
+        language = state.get("language") or "en"
+        if language == "my":
+            language_instruction = "\n- IMPORTANT: You MUST respond entirely in Burmese (Myanmar language). Use Burmese script for all text. Hero names, item names, and game terms can remain in English."
+        else:
+            language_instruction = ""
+
         # Build the prompt
         prompt = ChatPromptTemplate.from_messages([
             ("system", f"""{system_prompt}
@@ -160,7 +168,7 @@ Important guidelines:
 - Mention specific hero names, items, and game mechanics
 - If context is insufficient, use your general MLBB knowledge
 - For Marksman (MM) role, be especially detailed
-- Always be encouraging and constructive"""),
+- Always be encouraging and constructive{language_instruction}"""),
             ("user", "{query}")
         ])
 
@@ -212,7 +220,8 @@ Important guidelines:
         self,
         user_message: str,
         conversation_history: Optional[list[BaseMessage]] = None,
-        llm_provider: Optional[LLMProvider] = None
+        llm_provider: Optional[LLMProvider] = None,
+        language: Optional[str] = None,
     ) -> dict:
         """
         Process a user message through the coaching graph.
@@ -221,6 +230,7 @@ Important guidelines:
             user_message: The user's message.
             conversation_history: Previous conversation messages.
             llm_provider: Optional LLM provider to use.
+            language: User's preferred language code (e.g. "my" for Burmese).
 
         Returns:
             Dictionary with response and metadata.
@@ -233,6 +243,7 @@ Important guidelines:
             "build_context": None,
             "strategy_context": None,
             "llm_provider": llm_provider or self.llm_provider,
+            "language": language,
             "response": None
         }
 
