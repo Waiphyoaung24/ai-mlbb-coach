@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import get_settings
 from app.api.routes import router
+from app.api.v1.auth import router as auth_router
+from app.api.v1.chat import router as chat_router
+from app.api.v1.heroes import router as heroes_router
+from app.api.v1.players import router as players_router
 import logging
 
 # Configure logging
@@ -34,6 +38,10 @@ app.add_middleware(
 
 # Include routers
 app.include_router(router, tags=["coaching"])
+app.include_router(auth_router, prefix="/api/v1")
+app.include_router(chat_router, prefix="/api/v1")
+app.include_router(heroes_router, prefix="/api/v1")
+app.include_router(players_router, prefix="/api/v1")
 
 
 @app.on_event("startup")
@@ -42,6 +50,13 @@ async def startup_event():
     logger.info(f"Starting {settings.APP_NAME}")
     logger.info(f"Environment: {settings.ENVIRONMENT}")
     logger.info(f"Debug mode: {settings.DEBUG}")
+
+    # Create database tables (for SQLite dev; production uses Alembic migrations)
+    from app.core.database import engine, Base
+    import app.models.db  # noqa: F401 — registers all models with Base
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    logger.info("Database tables ready")
 
     # Check LLM providers
     from app.services.llm.provider import LLMFactory
