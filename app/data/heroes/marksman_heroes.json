@@ -1,0 +1,191 @@
+[
+  {
+    "id": "layla",
+    "name": "Layla",
+    "role": "Marksman",
+    "specialty": ["Damage", "Push"],
+    "lanes": ["Gold Lane"],
+    "difficulty": "Easy",
+    "description": "Layla is a classic marksman with high damage output and long range. She excels at dealing consistent physical damage from a safe distance.",
+    "strengths": [
+      "Extremely long range in late game",
+      "High burst damage with skill combo",
+      "Easy to learn mechanics",
+      "Strong tower push capability",
+      "Low skill floor for beginners"
+    ],
+    "weaknesses": [
+      "No mobility skills or escape",
+      "Very squishy with low HP",
+      "Heavily reliant on positioning",
+      "Vulnerable to assassins and divers",
+      "Weak early game"
+    ],
+    "counters": ["Miya", "Beatrix", "Brody"],
+    "countered_by": ["Natalia", "Lancelot", "Fanny", "Hayabusa"],
+    "gameplay_tips": [
+      "Always maintain maximum distance from enemies",
+      "Position behind tanks and fighters",
+      "Use skill 1 to poke and check bushes",
+      "Save skill 2 for burst damage on low HP enemies",
+      "Farm safely in early game, avoid trading",
+      "Build attack speed and critical items",
+      "Stay near tower until level 4"
+    ],
+    "build_core": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Windtalker"],
+    "emblem": "Marksman Emblem with Weakness Finder or Electro Flash",
+    "battle_spell": "Flicker or Inspire"
+  },
+  {
+    "id": "miya",
+    "name": "Miya",
+    "role": "Marksman",
+    "specialty": ["Damage", "Chase"],
+    "lanes": ["Gold Lane"],
+    "difficulty": "Easy",
+    "description": "Miya is a late-game hypercarry marksman with powerful split-pushing and dueling capabilities. Her passive grants attack speed, and her ultimate provides invulnerability.",
+    "strengths": [
+      "Powerful late game scaling",
+      "Ultimate provides immunity and repositioning",
+      "High attack speed with passive",
+      "Strong 1v1 dueling potential",
+      "Excellent split pushing",
+      "Can remove enemy buffs with skill 2"
+    ],
+    "weaknesses": [
+      "Very weak early game",
+      "No poke ability",
+      "Requires farm to be effective",
+      "Vulnerable before level 4",
+      "Predictable escape with ultimate"
+    ],
+    "counters": ["Layla", "Moskov", "Karrie"],
+    "countered_by": ["Natalia", "Lancelot", "Saber", "Karina"],
+    "gameplay_tips": [
+      "Focus on farming until you have 2-3 core items",
+      "Use ultimate to dodge critical skills and reposition",
+      "Activate skill 1 before engaging for increased attack speed",
+      "Position aggressively only when ultimate is available",
+      "Split push side lanes in late game",
+      "Avoid early game fights",
+      "Farm jungle camps between waves"
+    ],
+    "build_core": ["Swift Boots", "Golden Staff", "Demon Hunter Sword", "Corrosion Scythe"],
+    "emblem": "Marksman Emblem with Weakness Finder",
+    "battle_spell": "Flicker or Inspire"
+  },
+  {
+    "id": "moskov",
+    "name": "Moskov",
+    "role": "Marksman",
+    "specialty": ["Damage", "Crowd Control"],
+    "lanes": ["Gold Lane"],
+    "difficulty": "Medium",
+    "description": "Moskov is a high-skill marksman with unique penetrating basic attacks and crowd control. He can pin enemies to walls for devastating burst damage.",
+    "strengths": [
+      "Basic attacks penetrate targets",
+      "Powerful stun when pinning to walls",
+      "Good early to mid game damage",
+      "Dash skill for mobility",
+      "Strong against tanks",
+      "Can deny vision with skill 1"
+    ],
+    "weaknesses": [
+      "Short attack range",
+      "Requires good positioning near walls",
+      "Squishy with no defensive abilities",
+      "Skill-dependent for maximum damage",
+      "Vulnerable to burst damage"
+    ],
+    "counters": ["Tanks with high HP", "Karrie", "Claude"],
+    "countered_by": ["Wanwan", "Beatrix", "Natalia", "Karina"],
+    "gameplay_tips": [
+      "Position fights near walls to maximize stun potential",
+      "Use skill 2 dash to reposition or chase",
+      "Aim basic attacks to penetrate multiple enemies",
+      "Use skill 1 to check bushes and deny vision",
+      "Build attack speed and penetration",
+      "Play aggressively in early-mid game",
+      "Bait enemies near walls before engaging"
+    ],
+    "build_core": ["Swift Boots", "Corrosion Scythe", "Demon Hunter Sword", "Malefic Roar"],
+    "emblem": "Marksman Emblem with Weakness Finder",
+    "battle_spell": "Flicker or Inspire"
+  },
+  {
+    "id": "granger",
+    "name": "Granger",
+    "role": "Marksman",
+    "specialty": ["Burst", "Poke"],
+    "lanes": ["Gold Lane", "Jungle"],
+    "difficulty": "Medium",
+    "description": "Granger is a burst-damage marksman who relies on skill-based attacks rather than traditional basic attacks. He excels at poking and burst damage.",
+    "strengths": [
+      "High burst damage combo",
+      "Excellent poke with skill 1",
+      "Good mobility with skill 2",
+      "Strong early to mid game",
+      "Can jungle effectively",
+      "Good at securing objectives"
+    ],
+    "weaknesses": [
+      "Falls off in very late game",
+      "Limited by bullet system",
+      "Vulnerable during reload",
+      "Requires good aim and positioning",
+      "No crowd control"
+    ],
+    "counters": ["Squishy mages and marksmen", "Immobile heroes"],
+    "countered_by": ["Tanks", "Heroes with high sustain", "Wanwan", "Claude"],
+    "gameplay_tips": [
+      "Use skill 1 for poke and wave clear",
+      "Save skill 2 for dodging or gap closing",
+      "Aim ultimate carefully for maximum damage",
+      "Manage bullet count carefully",
+      "Reload in safe positions",
+      "Build attack and penetration",
+      "Play around your power spikes"
+    ],
+    "build_core": ["Warrior Boots", "Hunter Strike", "Endless Battle", "Malefic Roar"],
+    "emblem": "Marksman Emblem with Electro Flash or Assassin Emblem",
+    "battle_spell": "Flicker or Retribution (for jungle)"
+  },
+  {
+    "id": "bruno",
+    "name": "Bruno",
+    "role": "Marksman",
+    "specialty": ["Damage", "Chase"],
+    "lanes": ["Gold Lane"],
+    "difficulty": "Medium",
+    "description": "Bruno is a versatile marksman with high mobility and critical damage. His unique ball mechanic adds strategic depth to his gameplay.",
+    "strengths": [
+      "High mobility with dash and movement speed",
+      "Strong critical damage",
+      "Good early game presence",
+      "Ball mechanic adds utility",
+      "Can kite effectively",
+      "Decent at all stages of game"
+    ],
+    "weaknesses": [
+      "Requires good ball management",
+      "Skill-dependent damage",
+      "Vulnerable without dash",
+      "No hard crowd control",
+      "Medium attack range"
+    ],
+    "counters": ["Immobile mages", "Squishy heroes"],
+    "countered_by": ["Long-range marksmen", "Assassins", "Natalia", "Claude"],
+    "gameplay_tips": [
+      "Use ball to harass and zone enemies",
+      "Dash through ball for attack speed boost",
+      "Save dash for escape or chase",
+      "Build critical and attack speed",
+      "Play aggressively in lane",
+      "Use ultimate for burst or escape",
+      "Position to pick up ball frequently"
+    ],
+    "build_core": ["Swift Boots", "Scarlet Phantom", "Berserker's Fury", "Endless Battle"],
+    "emblem": "Marksman Emblem with Weakness Finder",
+    "battle_spell": "Flicker or Inspire"
+  }
+]

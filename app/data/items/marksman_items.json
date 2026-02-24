@@ -1,0 +1,193 @@
+[
+  {
+    "id": "swift_boots",
+    "name": "Swift Boots",
+    "category": "Movement",
+    "cost": 710,
+    "stats": {
+      "movement_speed": "+40",
+      "attack_speed": "+15%"
+    },
+    "passive": null,
+    "good_for": ["All Marksmen", "Basic attack focused heroes"],
+    "description": "Core boots for most marksmen, providing both movement and attack speed."
+  },
+  {
+    "id": "warrior_boots",
+    "name": "Warrior Boots",
+    "category": "Defense",
+    "cost": 720,
+    "stats": {
+      "movement_speed": "+40",
+      "physical_defense": "+22"
+    },
+    "passive": "Each basic attack received grants 5-25 Physical Defense, up to 25 points. Lasts 3s.",
+    "good_for": ["Granger", "Marksmen facing heavy physical damage"],
+    "description": "Defensive boots choice for marksmen against assassins."
+  },
+  {
+    "id": "scarlet_phantom",
+    "name": "Scarlet Phantom",
+    "category": "Attack",
+    "cost": 2020,
+    "stats": {
+      "physical_attack": "+30",
+      "attack_speed": "+40%",
+      "crit_chance": "+25%"
+    },
+    "passive": "Critical hits increase attack speed by 30% and critical chance by 10% for 2s.",
+    "good_for": ["Critical build marksmen", "Layla", "Bruno", "Miya"],
+    "description": "Core critical item that scales with attack speed."
+  },
+  {
+    "id": "berserkers_fury",
+    "name": "Berserker's Fury",
+    "category": "Attack",
+    "cost": 2280,
+    "stats": {
+      "physical_attack": "+65",
+      "crit_chance": "+25%",
+      "crit_damage": "+40%"
+    },
+    "passive": "Critical hits deal 40% extra damage.",
+    "good_for": ["All critical marksmen", "Late game damage"],
+    "description": "Maximum critical damage amplifier."
+  },
+  {
+    "id": "windtalker",
+    "name": "Windtalker",
+    "category": "Attack",
+    "cost": 1820,
+    "stats": {
+      "physical_attack": "+40",
+      "attack_speed": "+40%",
+      "crit_chance": "+10%",
+      "movement_speed": "+10%"
+    },
+    "passive": "Every 5 basic attacks trigger a wind strike dealing 200 magic damage to 3 enemies.",
+    "good_for": ["Attack speed marksmen", "Wave clear"],
+    "description": "Provides wave clear and movement speed."
+  },
+  {
+    "id": "demon_hunter_sword",
+    "name": "Demon Hunter Sword",
+    "category": "Attack",
+    "cost": 2180,
+    "stats": {
+      "physical_attack": "+35",
+      "attack_speed": "+25%"
+    },
+    "passive": "Basic attacks deal 3% of target's current HP as additional Physical Damage. Dealing damage grants 3% Physical Lifesteal for 3s, stacking up to 5 times.",
+    "good_for": ["Tank shredding", "Miya", "Moskov", "Against high HP enemies"],
+    "description": "Essential for dealing with tanks."
+  },
+  {
+    "id": "golden_staff",
+    "name": "Golden Staff",
+    "category": "Attack",
+    "cost": 2050,
+    "stats": {
+      "physical_attack": "+30",
+      "attack_speed": "+30%"
+    },
+    "passive": "Basic attacks no longer critical, but attack speed increases damage. Gain 1 physical attack for every 2% attack speed.",
+    "good_for": ["Miya", "Karrie", "Attack speed focused heroes"],
+    "description": "Converts crit to consistent damage based on attack speed."
+  },
+  {
+    "id": "corrosion_scythe",
+    "name": "Corrosion Scythe",
+    "category": "Attack",
+    "cost": 2050,
+    "stats": {
+      "physical_attack": "+50",
+      "attack_speed": "+25%"
+    },
+    "passive": "Basic attacks slow enemies by 8% for 1.5s, stacking up to 5 times.",
+    "good_for": ["Chase potential", "Miya", "Moskov", "Kiting"],
+    "description": "Provides strong kiting and chasing capability."
+  },
+  {
+    "id": "endless_battle",
+    "name": "Endless Battle",
+    "category": "Attack",
+    "cost": 2470,
+    "stats": {
+      "physical_attack": "+65",
+      "mana_regen": "+5",
+      "cooldown_reduction": "+10%",
+      "lifesteal": "+10%",
+      "movement_speed": "+5%"
+    },
+    "passive": "After using a skill, next basic attack deals 85% physical attack as true damage. 1.5s cooldown.",
+    "good_for": ["Skill-based marksmen", "Granger", "Bruno", "Brody"],
+    "description": "Ideal for heroes who weave skills with basic attacks."
+  },
+  {
+    "id": "malefic_roar",
+    "name": "Malefic Roar",
+    "category": "Attack",
+    "cost": 2060,
+    "stats": {
+      "physical_attack": "+60",
+      "physical_penetration": "+35%"
+    },
+    "passive": "Gain 0.5% extra physical penetration for every 1% HP the target has, up to 20%.",
+    "good_for": ["Against tanks", "All marksmen in late game", "Penetration builds"],
+    "description": "Core penetration item for late game."
+  },
+  {
+    "id": "haas_claws",
+    "name": "Haas's Claws",
+    "category": "Attack",
+    "cost": 1810,
+    "stats": {
+      "physical_attack": "+70",
+      "lifesteal": "+20%"
+    },
+    "passive": "When HP is below 40%, gain 25% extra lifesteal.",
+    "good_for": ["Sustain", "Solo split pushing", "Dueling"],
+    "description": "Provides strong lifesteal for survival."
+  },
+  {
+    "id": "sea_halberd",
+    "name": "Sea Halberd",
+    "category": "Attack",
+    "cost": 2000,
+    "stats": {
+      "physical_attack": "+70",
+      "lifesteal": "+10%"
+    },
+    "passive": "Dealing damage reduces target's shield and HP regen by 50% for 3s.",
+    "good_for": ["Against healers", "Against shields", "Anti-sustain"],
+    "description": "Counter item for high sustain enemies."
+  },
+  {
+    "id": "wind_of_nature",
+    "name": "Wind of Nature",
+    "category": "Defense",
+    "cost": 1910,
+    "stats": {
+      "physical_attack": "+30",
+      "lifesteal": "+10%"
+    },
+    "active": "Immune to all physical damage for 2s. 90s cooldown.",
+    "good_for": ["Against physical burst", "Survival", "Layla", "Miya"],
+    "description": "Defensive item to survive physical assassins."
+  },
+  {
+    "id": "athenas_shield",
+    "name": "Athena's Shield",
+    "category": "Defense",
+    "cost": 2150,
+    "stats": {
+      "magic_defense": "+62",
+      "hp": "+900",
+      "hp_regen": "+50",
+      "cooldown_reduction": "+20%"
+    },
+    "passive": "Gains shield that absorbs 170-1150 magic damage. Regenerates after not taking damage for 8s.",
+    "good_for": ["Against magic burst", "Survival", "All marksmen vs mages"],
+    "description": "Best magic defense item for marksmen."
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "mm_positioning",
+    "title": "Marksman Positioning Fundamentals",
+    "category": "positioning",
+    "role": "Marksman",
+    "content": "Positioning is the most critical skill for marksmen in MLBB. Always stay behind your frontline (tanks and fighters). Maintain maximum attack range from enemies. Position near walls or terrain that limits enemy approach angles. In team fights, focus on staying alive first, dealing damage second. A living marksman with 50% damage output is more valuable than a dead marksman who tried to maximize damage. Always have an escape route planned. Watch the minimap for flanking assassins. Never face-check bushes without vision. Stay near teammates for protection."
+  },
+  {
+    "id": "mm_early_game",
+    "title": "Marksman Early Game Strategy",
+    "category": "game_phase",
+    "role": "Marksman",
+    "content": "Early game (levels 1-4) is the weakest phase for marksmen. Focus on safe farming and avoid trading damage with enemies. Last-hit minions to maintain wave position near your tower. Only use skills for wave clear when necessary to save mana. Ask your support/tank to help zone enemies. Prioritize farming over fighting. Take jungle camps between waves if safe. Recall to base when low on HP/mana rather than risk death. A death in early game sets you back significantly. Aim for 40-50 CS by 5 minutes. Build your first core item as quickly as possible."
+  },
+  {
+    "id": "mm_mid_game",
+    "title": "Marksman Mid Game Strategy",
+    "category": "game_phase",
+    "role": "Marksman",
+    "content": "Mid game (levels 5-10, 1-2 items) is when marksmen start to scale. Participate in team fights but stay at the backline. Push objectives after winning fights (towers, turtle). Continue farming when no objectives are available. Rotate to help teammates but don't sacrifice farm unnecessarily. Ward key areas with your team. Start building defensive items if facing threats. Practice kiting and maintaining distance. Focus fire on the most accessible target, not necessarily the carry. Proper target selection means attacking whoever you can safely damage. Aim for 70-90 CS by 10 minutes."
+  },
+  {
+    "id": "mm_late_game",
+    "title": "Marksman Late Game Strategy",
+    "category": "game_phase",
+    "role": "Marksman",
+    "content": "Late game (3-4+ items) is when marksmen are strongest. Your positioning is more critical than ever - one mistake can lose the game. Never split push alone unless you have vision and your ultimate is ready. Stick with your team for 5v5 fights. Focus on attacking whoever is in your range while maintaining safe position. Kite backward if enemies dive you. Save your purify/flicker for critical moments. Buy defensive items if needed (Wind of Nature, Athena's Shield). Take Lord after winning team fights. In base defense, use tower damage to your advantage. One good team fight can end the game."
+  },
+  {
+    "id": "mm_team_fights",
+    "title": "Marksman Team Fight Guide",
+    "category": "teamfight",
+    "role": "Marksman",
+    "content": "Team fight positioning for marksmen: Enter fights last, not first. Let your tank initiate. Position at maximum attack range. Attack the nearest threat or safest target. Don't tunnel vision on enemy carries if it means walking into danger. Kite backward when enemies approach. Use your dash/mobility skill to reposition, not to engage. Watch for flanking assassins. Stay behind terrain or your team. Focus fire - attack the same target your team is attacking. After winning a fight, push objectives immediately. If losing the fight, retreat early rather than dying trying to save it. Never 1v1 unless you're significantly ahead."
+  },
+  {
+    "id": "mm_vs_assassins",
+    "title": "Marksman vs Assassins",
+    "category": "matchup",
+    "role": "Marksman",
+    "content": "Playing against assassins as a marksman requires awareness and defensive play. Always check bushes before walking near them. Watch the minimap for missing assassins. Position near your tank/support. Buy Wind of Nature against physical assassins (Natalia, Lancelot, Hayabusa). Buy Athena's Shield against magic assassins (Karina, Harley, Eudora). Save your mobility skill or battle spell for when assassin engages. Don't push lanes without vision. Recall when low HP. In team fights, position even further back. Ask teammates to protect you. Consider Guardian Helmet if being repeatedly killed. Stay under tower when vulnerable. Never farm alone in enemy jungle."
+  },
+  {
+    "id": "mm_farming",
+    "title": "Marksman Farming Priority",
+    "category": "farming",
+    "role": "Marksman",
+    "content": "Farm priority for marksmen: 1) Lane minions (highest gold/time). 2) Jungle camps near your lane. 3) Enemy jungle when safe. 4) Turtle if team can secure. Never sacrifice farming for unnecessary fights. Aim for 60+ CS by 8 minutes, 100+ CS by 12 minutes. Farm between objectives. Take waves in side lanes when no fights are happening. Don't stay in base shopping too long. Use skills efficiently for wave clear. Practice last-hitting. Catch waves pushing to your towers. Farm enemy jungle after pushing tower. Split farm with teammates efficiently. Your jungle can take some gold lane farm in early game, but priority shifts to you in mid-late game."
+  },
+  {
+    "id": "mm_kiting",
+    "title": "Marksman Kiting Techniques",
+    "category": "mechanics",
+    "role": "Marksman",
+    "content": "Kiting is the art of attacking while moving backward. Basic kiting: Attack > Move > Attack > Move. Use attack-move for easier execution. Cancel attack animation by moving immediately after damage registers. Maintain maximum distance from enemies. Use slows and your mobility skills to create distance. Practice in practice mode. Kite toward your team or tower. Against divers, kite in circles around terrain. Use bushes to break enemy vision. Predict enemy movement and position accordingly. Master this skill to outplay higher mobility enemies. Good kiting can turn 1v1 fights in your favor."
+  },
+  {
+    "id": "mm_itemization",
+    "title": "Marksman Itemization Guide",
+    "category": "itemization",
+    "role": "Marksman",
+    "content": "Core build principles: Start with boots first (Swift Boots or Warrior Boots). Build damage items first (2-3 items). Add defensive items when needed. Adapt to enemy team composition. Against tanks: Build Demon Hunter Sword or Malefic Roar. Against burst: Build Wind of Nature or Athena's Shield. For lifesteal: Haas's Claws or Endless Battle. For penetration: Malefic Roar (late game essential). Don't blindly follow build guides. Adapt each game. Sell boots late game for another damage item if at full build. Buy anti-heal (Sea Halberd) against heavy sustain teams. Prioritize attack speed for DPS marksmen. Prioritize attack damage for burst marksmen."
+  },
+  {
+    "id": "mm_wave_management",
+    "title": "Marksman Wave Management",
+    "category": "mechanics",
+    "role": "Marksman",
+    "content": "Wave management in gold lane: Keep wave near your tower in early game for safe farming. Freeze the wave by only last-hitting minions. Push wave into enemy tower before rotating or recalling. Slow push by killing ranged minions first. Fast push by clearing wave quickly with skills. Don't auto-attack minions mindlessly. Control wave position based on game state. When ahead, push to deny enemy farm. When behind, freeze near tower for safe farm. After killing enemy laner, push wave into tower to deny CS. Clear waves before objectives spawn. Never leave waves crashing into your tower undefended."
+  }
+]
