@@ -58,6 +58,9 @@ class Settings(BaseSettings):
     def allowed_origins_list(self) -> List[str]:
         return [origin.strip() for origin in self.ALLOWED_ORIGINS.split(",")]
 
+    # Moonton GMS API (MLBB Academy data)
+    MOONTON_GMS_BASE_URL: str = "https://api.gms.moontontech.com"
+
     # Logging
     LOG_LEVEL: str = "INFO"
 

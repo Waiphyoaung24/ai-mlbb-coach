@@ -19,6 +19,7 @@ class User(Base, UUIDMixin, TimestampMixin):
     tier = Column(SAEnum(UserTier), default=UserTier.FREE, nullable=False)
     mlbb_game_id = Column(String, nullable=True)
     mlbb_server_id = Column(String, nullable=True)
+    mlbb_username = Column(String, nullable=True)
     language = Column(String, default="my")
 
     teams = relationship("TeamMember", back_populates="user")

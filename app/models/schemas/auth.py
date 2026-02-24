@@ -27,6 +27,7 @@ class UserResponse(BaseModel):
     tier: str
     mlbb_game_id: Optional[str] = None
     mlbb_server_id: Optional[str] = None
+    mlbb_username: Optional[str] = None
     language: str
 
     class Config:

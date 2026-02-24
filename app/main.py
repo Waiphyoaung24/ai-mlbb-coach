@@ -53,9 +53,18 @@ async def startup_event():
 
     # Create database tables (for SQLite dev; production uses Alembic migrations)
     from app.core.database import engine, Base
+    from sqlalchemy import text
     import app.models.db  # noqa: F401 — registers all models with Base
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
+        # Add mlbb_username column if it doesn't exist (migration for existing DBs)
+        try:
+            await conn.execute(text(
+                "ALTER TABLE users ADD COLUMN mlbb_username VARCHAR"
+            ))
+            logger.info("Added mlbb_username column to users table")
+        except Exception:
+            pass  # Column already exists
     logger.info("Database tables ready")
 
     # Check LLM providers
