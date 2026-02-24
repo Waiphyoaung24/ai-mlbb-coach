@@ -2,10 +2,12 @@ from typing import TypedDict, Annotated, Sequence, Optional, Literal
 from langgraph.graph import StateGraph, END
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate
+import asyncio
 import operator
 import logging
 from app.services.llm.provider import LLMFactory
 from app.services.rag.retriever import HeroRetriever, BuildRetriever, StrategyRetriever
+from app.services.mlbb_academy.meta_client import get_meta_client, HERO_NAME_MAP
 from app.models.schemas import LLMProvider
 
 logger = logging.getLogger(__name__)
@@ -34,6 +36,7 @@ class CoachingState(TypedDict):
     hero_context: Optional[str]
     build_context: Optional[str]
     strategy_context: Optional[str]
+    meta_context: Optional[str]
     llm_provider: Optional[LLMProvider]
     language: Optional[str]
     response: Optional[str]
@@ -105,6 +108,48 @@ Respond with ONLY the category name, nothing else."""),
             state["strategy_context"] = self.strategy_retriever.format_documents(docs)
         return state
 
+    def _retrieve_meta_context(self, state: CoachingState) -> CoachingState:
+        """Fetch real-time hero meta data from Moonton GMS API."""
+        if state["intent"] in ["hero_info", "matchup_analysis", "build_recommendation"]:
+            query_lower = state["user_query"].lower()
+            detected_heroes = [
+                name for name in HERO_NAME_MAP if name in query_lower
+            ]
+
+            if detected_heroes:
+                meta_client = get_meta_client()
+                meta_parts = []
+
+                try:
+                    loop = asyncio.get_event_loop()
+                except RuntimeError:
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+
+                for hero_name in detected_heroes[:2]:  # limit to 2 heroes
+                    hero_id = HERO_NAME_MAP[hero_name]
+                    try:
+                        rankings = loop.run_until_complete(
+                            meta_client.get_hero_rankings(rank="all", days=7, limit=131)
+                        )
+                        counters = loop.run_until_complete(
+                            meta_client.get_hero_counters(hero_id, rank="mythic")
+                        )
+                        synergies = loop.run_until_complete(
+                            meta_client.get_hero_synergies(hero_id, rank="mythic")
+                        )
+                        meta_text = meta_client.format_meta_context(
+                            hero_name, rankings, counters, synergies
+                        )
+                        meta_parts.append(meta_text)
+                    except Exception as e:
+                        logger.warning(f"Failed to fetch meta for {hero_name}: {e}")
+
+                if meta_parts:
+                    state["meta_context"] = "\n".join(meta_parts)
+
+        return state
+
     def _generate_response(self, state: CoachingState) -> CoachingState:
         """Generate the coaching response using retrieved context."""
         llm = LLMFactory.get_model(
@@ -114,6 +159,8 @@ Respond with ONLY the category name, nothing else."""),
 
         # Build context from retrieved information
         context_parts = []
+        if state.get("meta_context"):
+            context_parts.append(state["meta_context"])
         if state.get("hero_context"):
             context_parts.append(f"Hero Information:\n{state['hero_context']}")
         if state.get("build_context"):
@@ -200,16 +247,18 @@ Important guidelines:
         workflow.add_node("retrieve_hero", self._retrieve_hero_context)
         workflow.add_node("retrieve_build", self._retrieve_build_context)
         workflow.add_node("retrieve_strategy", self._retrieve_strategy_context)
+        workflow.add_node("retrieve_meta", self._retrieve_meta_context)
         workflow.add_node("generate_response", self._generate_response)
 
         # Define the flow
         workflow.set_entry_point("classify_intent")
 
-        # After classification, retrieve all relevant contexts in parallel
+        # After classification, retrieve all relevant contexts sequentially
         workflow.add_edge("classify_intent", "retrieve_hero")
         workflow.add_edge("retrieve_hero", "retrieve_build")
         workflow.add_edge("retrieve_build", "retrieve_strategy")
-        workflow.add_edge("retrieve_strategy", "generate_response")
+        workflow.add_edge("retrieve_strategy", "retrieve_meta")
+        workflow.add_edge("retrieve_meta", "generate_response")
 
         # End after generation
         workflow.add_edge("generate_response", END)
@@ -242,6 +291,7 @@ Important guidelines:
             "hero_context": None,
             "build_context": None,
             "strategy_context": None,
+            "meta_context": None,
             "llm_provider": llm_provider or self.llm_provider,
             "language": language,
             "response": None
@@ -259,6 +309,7 @@ Important guidelines:
             "sources": {
                 "hero_context": result.get("hero_context"),
                 "build_context": result.get("build_context"),
-                "strategy_context": result.get("strategy_context")
+                "strategy_context": result.get("strategy_context"),
+                "meta_context": result.get("meta_context"),
             }
         }
