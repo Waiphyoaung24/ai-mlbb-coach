@@ -10,66 +10,6 @@ class LLMProvider(str, Enum):
     GEMINI = "gemini"
 
 
-class HeroRole(str, Enum):
-    """MLBB Hero Roles."""
-    MARKSMAN = "Marksman"
-    ASSASSIN = "Assassin"
-    FIGHTER = "Fighter"
-    TANK = "Tank"
-    SUPPORT = "Support"
-    MAGE = "Mage"
-
-
-class HeroLane(str, Enum):
-    """MLBB Lanes."""
-    GOLD = "Gold Lane"
-    EXP = "EXP Lane"
-    MID = "Mid Lane"
-    JUNGLE = "Jungle"
-    ROAM = "Roam"
-
-
-class Hero(BaseModel):
-    """MLBB Hero model."""
-    id: str
-    name: str
-    role: HeroRole
-    specialty: List[str]
-    lanes: List[HeroLane]
-    difficulty: str  # Easy, Medium, Hard
-    description: str
-    strengths: List[str]
-    weaknesses: List[str]
-    counters: List[str] = []
-    countered_by: List[str] = []
-
-
-class Item(BaseModel):
-    """MLBB Item model."""
-    id: str
-    name: str
-    category: str  # Attack, Defense, Magic, Movement, Jungle
-    cost: int
-    stats: Dict[str, Any]
-    passive: Optional[str] = None
-    active: Optional[str] = None
-    good_for: List[str] = []
-
-
-class BuildRecommendation(BaseModel):
-    """Hero build recommendation."""
-    hero_name: str
-    role: HeroRole
-    core_items: List[str]
-    situational_items: List[str]
-    boots: str
-    emblem: str
-    emblem_talents: List[str]
-    battle_spell: str
-    playstyle: str
-    reasoning: str
-
-
 class ChatMessage(BaseModel):
     """Chat message model."""
     role: str  # user, assistant, system
@@ -97,7 +37,7 @@ class MatchupRequest(BaseModel):
     """Matchup analysis request."""
     your_hero: str
     enemy_hero: str
-    lane: Optional[HeroLane] = None
+    lane: Optional[str] = None
     llm_provider: Optional[LLMProvider] = None
 
 
@@ -105,7 +45,7 @@ class MatchupAnalysis(BaseModel):
     """Matchup analysis response."""
     your_hero: str
     enemy_hero: str
-    lane: Optional[HeroLane]
+    lane: Optional[str]
     difficulty: str  # Easy, Medium, Hard
     key_points: List[str]
     tips: List[str]
@@ -124,8 +64,8 @@ class BuildRequest(BaseModel):
 class HeroQueryRequest(BaseModel):
     """Hero information query."""
     hero_name: Optional[str] = None
-    role: Optional[HeroRole] = None
-    lane: Optional[HeroLane] = None
+    role: Optional[str] = None
+    lane: Optional[str] = None
 
 
 class HealthResponse(BaseModel):
