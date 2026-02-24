@@ -2,15 +2,24 @@ from pydantic import BaseModel, Field
 from typing import Optional, List
 
 
-class LinkAccountRequest(BaseModel):
+class ValidateAccountRequest(BaseModel):
     game_id: str = Field(..., description="MLBB Game ID")
     server_id: str = Field(..., description="MLBB Server/Zone ID")
 
 
-class VerifyAccountRequest(BaseModel):
+class ValidateAccountResponse(BaseModel):
+    valid: bool
     game_id: str
     server_id: str
-    verification_code: str
+    username: Optional[str] = None
+    country: Optional[str] = None
+    error: Optional[str] = None
+
+
+class ConfirmLinkRequest(BaseModel):
+    game_id: str = Field(..., description="MLBB Game ID")
+    server_id: str = Field(..., description="MLBB Server/Zone ID")
+    username: str = Field(..., description="Confirmed in-game username")
 
 
 class PlayerProfile(BaseModel):
